@@ -57,7 +57,7 @@ public class Principal {
 
         List<Episodio> episodios = temporadas.stream()
                 .flatMap(t -> t.episodios().stream()
-                        .map(d -> new Episodio(t.episodios(), d))
+                        .map(d -> new Episodio(t.temporada(), d))
                 ).collect(Collectors.toList());
 
         episodios.forEach(System.out::println);
